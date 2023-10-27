@@ -1,0 +1,25 @@
+_Gus, o Mafioso_
+
+    O renomado mafioso Gus Gusmack está se mudando para a cidade. 
+    Ele tem uma família muito grande e irá visitar seus parentes com frequência, todos os quais moram na Avenida Cecê. 
+    Então ele está procurando uma casa próxima de todos eles.
+
+    As casas da Avenida Cecê são todas numeradas com valores inteiros e os parentes de Gus vivem nas casas c1, c2, …, cn. 
+    Gus deseja comprar uma casa cg tal que soma das distâncias da sua casa para as de todos os seus parentes seja a menor possível.
+
+    Em outras palavras, Gus quer minimzar a soma das distâncias s:
+        s = d(cg,c1) + d(cg,c2) + … + d(cg,cn)
+
+    Como a Avenida Cecê é uma longa reta, então a distância entre duas casas ci e cj é simplesmente d(ci,cj)=|ci−cj|.
+
+    O problema é que Gus não sabe programar, mas ele ouviu falar da sua dedicação às disciplinas do IComp. 
+    Sabendo que você tem o conhecimento necessário para resolver esse problema, ele decidiu chantagear você e exigiu uma solução em Python.
+
+_Entrada e Saída_
+
+    A entrada conterá vários casos de teste. Cada caso de teste é uma lista em notação Python que contém os números das casas onde os parentes de Gus moram.
+
+    A entrada termina quando aparecer uma lista vazia.
+
+    Como saída imprima, para cada caso de teste, a soma das distâncias da casa que Gus irá comprar para as casas de todos os seus parentes,
+    considerando-se que ele escolhe a melhor casa conforme descrito no enunciado.

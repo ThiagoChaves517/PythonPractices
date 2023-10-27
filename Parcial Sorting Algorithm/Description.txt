@@ -1,0 +1,32 @@
+_Ordenação parcial do vetor_
+
+    Normalmente, a saída de um algoritmo de ordenação é uma permutação na qual todos os elementos de um vetor estão em alguma ordem específica. Por exemplo, se a entrada for a seguinte sequência:
+
+        [6,2,7,1,5,4,3,8]
+
+    Então a saída certa deve ser a seguinte:
+
+        [1,2,3,4,5,6,7,8].
+
+    Entretanto, existem situações nas quais não queremos ordenar todos os elementos. Uma ordenação parcial é uma permutação na qual apenas os 
+    K primeiros elementos de um vetor estão em ordem. Os demais permanecem inalterados. Por exemplo, se a entrada for a seguinte sequência:
+
+        [6,2,7,1,5,4,3,8]
+
+    Então uma ordenação parcial com K=3 deve produzir o seguinte resultado:
+        
+        [1,2,3,6,7,5,4,8]
+
+    Note que apenas os três primeiros elementos do vetor estão em ordem. 
+    Os demais permanecem com a mesma ordem relativa que tinham no vetor original.
+
+    Faça um programa que ponha em ordem crescente somente os K primeiros elementos de um vetor de tamanho N. 
+    Os restantes devem preservar sua ordem relativa original.
+
+_Entrada_
+
+    A entrada consiste de um Inteiro N (2<N<100) e um inteiro K (0<K≤N), cada qual em uma linha. Em seguida, haverá uma lista contendo os N inteiros que representam o vetor.
+
+_Saída_
+
+    Imprima o vetor parcialmente ordenado em notação Python.

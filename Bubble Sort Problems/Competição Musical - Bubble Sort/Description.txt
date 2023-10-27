@@ -1,0 +1,21 @@
+_Competição Musical (E/S Python)_
+
+    Em uma certa competição musical, os competidores são avaliados por três jurados, que dão notas de 0 a 10. 
+    Após descartar a menor nota, a pontuação do competidor é obtida pela soma das outras duas.
+
+    Cada competidor tem um número de registro. 
+    O primeiro competidor a entrar recebe o número de registro 1 e os demais competidores recebem números sequenciais. 
+    O número de registro é importante porque, se dois competidores têm mesma pontuação, aquele de menor número de registro vence.
+
+    Escreva um programa que leia os dados de uma competição e produza o placar da competição.
+
+_Entrada_
+
+    A entrada começa com um inteiro N, indicando o número de competidores registrados.
+    Em seguida aparecem as descrições dos competidores por ordem de registro. 
+    Os dados de cada competidor aparecem com uma tupla com quatro elementos. 
+    O primeiro é o nome do competidor e os demais são as notas dos três jurados.
+
+_Saída_
+
+    Escreva o placar, indicando o nome e a pontuação obtida por cada competidor no formato NOME: PONTOS.

@@ -1,0 +1,32 @@
+_Ordenação de Pontos por Mesclagem_
+
+    Crie uma classe chamada `ponto` para guardar e ordenar pontos no plano cartesiano. 
+    A classe deverá conter os seguintes métodos:
+
+    1. `__init__(self, x, y)`: Este construtor receberá as coordenadas do ponto e armazenará os atributos `self.x` e `self.y`. 
+    Além disso, calculará e armazenará a distância do ponto para a origem.
+
+    2. `__lt__(self, outro)`: Este método sobrecarregará o operador `<` e será usado para fazer comparações entre pontos. 
+    Ele receberá como argumento um outro objeto da classe `ponto` e retornará `True` se e somente se o ponto representado por `self` deve aparecer antes do que o ponto representado por `outro`.
+
+    Os pontos devem ser ordenados usando o algoritmo Merge Sort, de acordo com os seguintes critérios:
+
+    1. O ponto mais próximo da origem deve aparecer primeiro. 
+    Por exemplo, `(2,2)` está mais perto da origem do que `(0,3)`.
+
+    2. Se dois pontos estiverem à mesma distância da origem, o ponto que estiver mais à esquerda vem primeiro. 
+    Exemplo: `(0,5)` e `(3,4)`.
+
+    3. Se os dois pontos estiverem à mesma distância da origem e possuírem o mesmo valor da coordenada `x`, 
+    então o ponto que estiver mais abaixo vem primeiro. Exemplo: `(6,-8)` e `(6,8)`.
+
+    Em seguida, faça um programa principal que lê uma série de pontos e os guarda em uma lista para em seguida ordená-los usando o algoritmo de ordenação Merge Sort. O algoritmo de ordenação não deve fazer comparações de distâncias ou coordenadas. Em vez disso, 
+    deve apenas comparar dois pontos. O método `__lt__`, sobrecarregado, é quem verificará os critérios da ordenação.
+
+    Ao final, imprima a lista ordenada.
+
+_Entrada e Saída_
+    A entrada será uma lista contendo N tuplas, isto é, `[(x1,y1), (x2,y2),…,(xN,yN)]`. 
+    Cada tupla `(xi,yi)` representa as coordenadas de um ponto no plano cartesiano.
+
+    Imprima a coleção ordenada usando o formato ilustrado nos casos de exemplo.
