@@ -1,4 +1,4 @@
-from funcoesHeap import aumentarChave as heapPush
+import heapq
 
 def gerarEstadoInicial(x, y):
     tupla = (x, y)
@@ -34,7 +34,7 @@ def algoritmo_A_Estrela(estadoInicial, estadoFinal, matrizLabirintoDeBools): # S
     predecessores = {}  # Dicionário para rastrear o caminho
     g = {estadoInicial: 0}  # Custos acumulados para chegar a cada estado
 
-    heapPush(agendaDePrioridades, 0, (calcularCusto(estadoInicial, estadoFinal), estadoInicial))
+    heapq.heappush(agendaDePrioridades, (calcularCusto(estadoInicial, estadoFinal), estadoInicial))
     estadosPassados.add(estadoInicial)
 
     while (len(agendaDePrioridades) > 0):
@@ -58,11 +58,11 @@ def algoritmo_A_Estrela(estadoInicial, estadoFinal, matrizLabirintoDeBools): # S
                                                                                                          #Se não estiver, retorna infinito, pois "proximoEstado" ainda não foi explorado.
                 g[proximoEstado] = novoCusto
                 f = novoCusto + calcularCusto(proximoEstado, estadoFinal)
-                heapPush(agendaDePrioridades, 0, (f, proximoEstado))
+                heapq.heappush(agendaDePrioridades, (f, proximoEstado))
                 predecessores[proximoEstado] = estado
                 estadosPassados.add(proximoEstado)
 
-    return None
+    return 'Impossível sair do labirinto... Use o KameHameHa para destruir tudo!'
 
 #----------------------------------------------------------------------------------------------------
 

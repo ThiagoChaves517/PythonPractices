@@ -1,6 +1,12 @@
 from mathSolutions import oddInt
 import random as r
 
+def imprimirLabirinto(matriz, linhas, colunas):
+    for i in range(linhas):
+        for j in range(colunas):
+            print(matriz[i][j], end=' ')
+        print()
+
 def inicializarLabirinto(linhas, colunas): #Gera um labirinto vazio
     matriz = []
 
@@ -10,6 +16,8 @@ def inicializarLabirinto(linhas, colunas): #Gera um labirinto vazio
 
     return matriz
 
+
+'''
 def geraLabirinto(colunas, linhas):
     labirinto = inicializarLabirinto(linhas, colunas)
     lista = [] # uma lista vazia
@@ -38,3 +46,4 @@ def geraLabirinto(colunas, linhas):
         para cada coordenada alcançável a partir de (y2, x2):
             insira a coordenada alcançavel em L se o destino estiver dentro dos limites do
             labirinto e for uma parede
+'''
