@@ -7,15 +7,15 @@ def imprimirLabirinto(matriz, linhas, colunas):
             print(matriz[i][j], end=' ')
         print()
 
-def inicializarLabirinto(linhas, colunas): #Gera um labirinto vazio
-    matriz = []
-
+def inicializarLabirinto(matrizLabirinto, linhas, colunas): #Gera um labirinto vazio
     for i in range(linhas):
+        linhaMatriz = [] # Represenda cada uma das linhas da matriz "matrizLabirintoDeBools"  
         for j in range(colunas):
-            matriz.append(1) # Sendo "True" as paredes do labirinto.
+            linhaMatriz.append(1)
 
-    return matriz
+        matrizLabirinto.append(linhaMatriz) # Sendo "1" as paredes do labirinto e "0" os corredores.
 
+    return matrizLabirinto
 
 '''
 def geraLabirinto(colunas, linhas):

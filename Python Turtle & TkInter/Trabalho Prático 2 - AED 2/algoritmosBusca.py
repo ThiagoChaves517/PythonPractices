@@ -1,33 +1,37 @@
-import heapq
+import heapq # Biblioteca que utiliza as propriedades de uma heap;
 
-def gerarEstadoInicial(x, y):
-    tupla = (x, y)
-    
-    return tupla
-
+# Esta função localiza os corredores mais próximos e acessíveis (os pontos que estão sinzalizados com 0):
 def criarTransicoes(estadoInicial, matrizLabirinto):
     estadosEscolhidos = []
 
-    if(estadoInicial[0] > 0 and matrizLabirinto[estadoInicial[0]-1][estadoInicial[1]] == 0): # Is there sea in North?
+    # Devo ir pro Norte?
+    if(estadoInicial[0] > 0 and matrizLabirinto[estadoInicial[0]-1][estadoInicial[1]] == 0):
         estadosEscolhidos.append((estadoInicial[0]-1, estadoInicial[1]))
 
-    if(estadoInicial[1] < len(matrizLabirinto[0])-1 and matrizLabirinto[estadoInicial[0]][estadoInicial[1]+1] == 0): # Is there sea in East?
+    # Devo ir pro Leste?
+    if(estadoInicial[1] < len(matrizLabirinto[0])-1 and matrizLabirinto[estadoInicial[0]][estadoInicial[1]+1] == 0):
         estadosEscolhidos.append((estadoInicial[0], estadoInicial[1]+1))
 
-    if(estadoInicial[1]  > 0 and matrizLabirinto[estadoInicial[0]][estadoInicial[1]-1] == 0): # Is there sea in West?
+    # Devo ir pro Oeste?
+    if(estadoInicial[1]  > 0 and matrizLabirinto[estadoInicial[0]][estadoInicial[1]-1] == 0):
         estadosEscolhidos.append((estadoInicial[0], estadoInicial[1]-1))
     
-    if(estadoInicial[0] < len(matrizLabirinto)-1 and matrizLabirinto[estadoInicial[0]+1][estadoInicial[1]] == 0): # Is there sea in South?
+    # Devo ir pro Sul?
+    if(estadoInicial[0] < len(matrizLabirinto)-1 and matrizLabirinto[estadoInicial[0]+1][estadoInicial[1]] == 0):
         estadosEscolhidos.append((estadoInicial[0]+1, estadoInicial[1]))
 
     matrizLabirinto[estadoInicial[0]][estadoInicial[1]] = 1
 
     return estadosEscolhidos
 
+
+# Esta é uma função heurística simples que calcula a distância de Manhattan até o estado final,
+# ou seja, a distância entre o estado atual e o estado final.
 def calcularCusto(estado, estadoFinal):
-    # Esta é uma função heurística simples que calcula a distância de Manhattan até o estado final
     return abs(estado[0] - estadoFinal[0]) + abs(estado[1] - estadoFinal[1])
 
+
+# Este algoritmo busca o caminho mais curto até a saída do labirinto:
 def algoritmo_A_Estrela(estadoInicial, estadoFinal, matrizLabirintoDeBools): # Sendo estadoInicial e estadoFinal tuplas.
     agendaDePrioridades = []
     estadosPassados = set()
