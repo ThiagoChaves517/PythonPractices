@@ -8,19 +8,19 @@ def gerarEstadoInicial(x, y):
 def criarTransicoes(estadoInicial, matrizLabirinto):
     estadosEscolhidos = []
 
-    if(estadoInicial[0] > 0 and matrizLabirinto[estadoInicial[0]-1][estadoInicial[1]] == False): # Is there sea in North?
+    if(estadoInicial[0] > 0 and matrizLabirinto[estadoInicial[0]-1][estadoInicial[1]] == 0): # Is there sea in North?
         estadosEscolhidos.append((estadoInicial[0]-1, estadoInicial[1]))
 
-    if(estadoInicial[1] < len(matrizLabirinto[0])-1 and matrizLabirinto[estadoInicial[0]][estadoInicial[1]+1] == False): # Is there sea in East?
+    if(estadoInicial[1] < len(matrizLabirinto[0])-1 and matrizLabirinto[estadoInicial[0]][estadoInicial[1]+1] == 0): # Is there sea in East?
         estadosEscolhidos.append((estadoInicial[0], estadoInicial[1]+1))
 
-    if(estadoInicial[1]  > 0 and matrizLabirinto[estadoInicial[0]][estadoInicial[1]-1] == False): # Is there sea in West?
+    if(estadoInicial[1]  > 0 and matrizLabirinto[estadoInicial[0]][estadoInicial[1]-1] == 0): # Is there sea in West?
         estadosEscolhidos.append((estadoInicial[0], estadoInicial[1]-1))
     
-    if(estadoInicial[0] < len(matrizLabirinto)-1 and matrizLabirinto[estadoInicial[0]+1][estadoInicial[1]] == False): # Is there sea in South?
+    if(estadoInicial[0] < len(matrizLabirinto)-1 and matrizLabirinto[estadoInicial[0]+1][estadoInicial[1]] == 0): # Is there sea in South?
         estadosEscolhidos.append((estadoInicial[0]+1, estadoInicial[1]))
 
-    matrizLabirinto[estadoInicial[0]][estadoInicial[1]] = True
+    matrizLabirinto[estadoInicial[0]][estadoInicial[1]] = 1
 
     return estadosEscolhidos
 
