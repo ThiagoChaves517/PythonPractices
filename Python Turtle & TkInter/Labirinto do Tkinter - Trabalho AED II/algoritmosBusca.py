@@ -69,4 +69,4 @@ def algoritmo_A_Estrela(estadoInicial, estadoFinal, matrizLabirintoDeBools): # S
                 predecessores[proximoEstado] = estado
                 estadosPassados.add(proximoEstado)
 
-    return 'Impossível sair do labirinto... Use o KameHameHa para destruir tudo!'
+    return (0,0)
