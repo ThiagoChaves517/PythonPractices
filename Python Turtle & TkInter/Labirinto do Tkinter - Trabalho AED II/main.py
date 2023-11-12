@@ -9,6 +9,17 @@ import tkinter as tk
 
 # -------------------------------------------------------------------------------------------------
 
+def pintarLabirinto(canvas, matrizLabirinto, linhas, colunas, tamanhoQuadrado):
+    for i in range(linhas): 
+        for j in range(colunas):
+            # Se o ponto for uma parede... 
+            if matrizLabirinto[i][j] == 1:
+                canvas.create_rectangle(j*tamanhoQuadrado, i*tamanhoQuadrado, j*tamanhoQuadrado+tamanhoQuadrado, i*tamanhoQuadrado+tamanhoQuadrado, fill="black")
+            # Se o ponto for um corredor...
+            else:  
+                canvas.create_rectangle(j*tamanhoQuadrado, i*tamanhoQuadrado, j*tamanhoQuadrado+tamanhoQuadrado, i*tamanhoQuadrado+tamanhoQuadrado, fill="white")
+
+
 def pintarCaminho(matrizLabirinto, canvas, tamanhoQuadrado, personagem, pF, corredores):
     x1, y1, x2, y2 = canvas.coords(personagem)
     x = round(x1/tamanhoQuadrado)
@@ -84,14 +95,8 @@ def main():
     p0 = gerarPontoDePartida(corredores)
     pF = gerarSaidaLabirinto(matrizLabirintoDeBools, linhas, colunas, corredores)
     
-    for i in range(linhas): 
-        for j in range(colunas):
-            # Se o ponto for uma parede... 
-            if matrizLabirintoDeBools[i][j] == 1:
-                canvas.create_rectangle(j*tamanhoQuadrado, i*tamanhoQuadrado, j*tamanhoQuadrado+tamanhoQuadrado, i*tamanhoQuadrado+tamanhoQuadrado, fill="black")
-            # Se o ponto for um corredor...
-            else:  
-                canvas.create_rectangle(j*tamanhoQuadrado, i*tamanhoQuadrado, j*tamanhoQuadrado+tamanhoQuadrado, i*tamanhoQuadrado+tamanhoQuadrado, fill="white")
+    # O labirinto é criado:
+    pintarLabirinto(canvas, matrizLabirintoDeBools, linhas, colunas, tamanhoQuadrado)
 
     # O personagem principal, Codibentinho, é desenhado, tendo em conta que será desenhado no ponto p0: 
     personagem = canvas.create_rectangle(p0[1]*tamanhoQuadrado, p0[0]*tamanhoQuadrado, p0[1]*tamanhoQuadrado+tamanhoQuadrado, p0[0]*tamanhoQuadrado+tamanhoQuadrado, fill="green")
