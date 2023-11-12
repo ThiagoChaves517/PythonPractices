@@ -77,7 +77,7 @@ def geraLabirinto(matrizLabirinto, linhas, colunas, corredores):
     corredores.append((x0,y0))
 
     # Insere os quatro primeiros corredores em L:
-    lista.append((x0-1, y0, x0-2, y0)) # Corredor de dois quadrados para cima.
+    lista.append((x0-1, y0, x0-2, y0)) # Corredor de dois quadrados para cima. (x1, y1) (x2, y2)
     lista.append((x0, y0+1, x0, y0+2)) # Corredor de dois quadrados para a direita.
     lista.append((x0, y0-1, x0, y0-2)) # Corredor de dois quadrados para a esquerda.
     lista.append((x0+1, y0, x0+2, y0)) # Corredor de dois quadrados para baixo.

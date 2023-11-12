@@ -20,9 +20,7 @@ def criarTransicoes(estadoInicial, matrizLabirinto):
     # Devo ir pro Sul?
     if(estadoInicial[0] < len(matrizLabirinto)-1 and matrizLabirinto[estadoInicial[0]+1][estadoInicial[1]] == 0):
         estadosEscolhidos.append((estadoInicial[0]+1, estadoInicial[1]))
-
-    matrizLabirinto[estadoInicial[0]][estadoInicial[1]] = 1
-
+        
     return estadosEscolhidos
 
 
@@ -63,7 +61,7 @@ def algoritmo_A_Estrela(estadoInicial, estadoFinal, matrizLabirintoDeBools): # S
             if ( (proximoEstado not in estadosPassados) or (novoCusto < g.get(proximoEstado, float('inf'))) ): #get() retorna g[proximoEstado] no caso dele já existir em g. 
                                                                                                          #Se não estiver, retorna infinito, pois "proximoEstado" ainda não foi explorado.
                 g[proximoEstado] = novoCusto
-                f = novoCusto + calcularCusto(proximoEstado, estadoFinal)
+                f = novoCusto + calcularCusto(proximoEstado, estadoFinal) # f = g + h
                 agendaDePrioridades.append((-1, -1))
                 aumentarChave(agendaDePrioridades, len(agendaDePrioridades)-1, (f, proximoEstado))
                 predecessores[proximoEstado] = estado
